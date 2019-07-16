@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
                 mClockView.setShowAnalog(!mClockView.isShowAnalog());
             }
         });
+    }
 
+    @Override
+    protected void onDestroy() {
+        mClockView.clockStop();
+        super.onDestroy();
     }
 }
